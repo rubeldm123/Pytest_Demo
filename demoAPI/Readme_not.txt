@@ -178,3 +178,13 @@ password: password123
 ^Cmds-MacBook-Pro:demoAPI mdrubel$ python -m pytest --alluredir=target/allure-rertr
 ^Cmds-MacBook-Pro:demoAPI mdrubel$ allure serve target/allure-report
 
+
+
+---------Add data driven using fixture-----------
+import pytest
+
+
+@pytest.fixture(params=[("Admin", "admin123"), ("Admi12322", "admin")])
+def userData(request):
+    return request.param
+
